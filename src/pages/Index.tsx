@@ -2,19 +2,21 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const FACADE_IMG = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket/09935c9d-4b64-4aab-9703-f303a92fc178.png";
-const GROOMING_ACTION = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/3d122096-fe6b-4d80-b1fd-ff167e2765a6.jpg";
+const GROOMING_ACTION = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket/grooming-hero.jpg";
+
+const CDN = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket";
 
 const GALLERY_PHOTOS = [
-  { url: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/3e19a03a-9b5f-47f3-8fd7-bc73813c7423.jpg", name: "Бишон Фризе", label: "Модельная стрижка" },
-  { url: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/c384486d-0808-4ed7-8527-363313043ebe.jpg", name: "Пудель", label: "Show-грум" },
-  { url: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/6fab8aa2-a1b4-402e-8952-b41f34d0dde4.jpg", name: "Йоркширский терьер", label: "Puppy cut" },
-  { url: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/c373ec26-1a33-4846-b531-ce3bdb3124f0.jpg", name: "Шпиц", label: "Round cut" },
+  { url: `${CDN}/gallery-1.jpg`, name: "Бишон Фризе", label: "Модельная стрижка" },
+  { url: `${CDN}/gallery-2.jpg`, name: "Пудель", label: "Show-грум" },
+  { url: `${CDN}/gallery-3.jpg`, name: "Йоркширский терьер", label: "Puppy cut" },
+  { url: `${CDN}/gallery-4.jpg`, name: "Шпиц", label: "Round cut" },
 ];
 
 const SPECIALISTS = [
-  { name: "Екатерина М.", exp: "7 лет", spec: "Пудели, шпицы, йорки", photo: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/13e568dd-ea89-4154-a405-1d116b817bdd.jpg" },
-  { name: "Алексей П.", exp: "5 лет", spec: "Крупные породы, хаски", photo: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/af36c59d-69ed-44dc-ada6-7e4e2e7b3aba.jpg" },
-  { name: "Наталья С.", exp: "9 лет", spec: "Кошки всех пород", photo: "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/files/ab696a53-3614-43d0-ae5a-8305c028a00c.jpg" },
+  { name: "Екатерина М.", exp: "7 лет", spec: "Пудели, шпицы, йорки", photo: `${CDN}/specialist-1.jpg` },
+  { name: "Алексей П.", exp: "5 лет", spec: "Крупные породы, хаски", photo: `${CDN}/specialist-2.jpg` },
+  { name: "Наталья С.", exp: "9 лет", spec: "Кошки всех пород", photo: `${CDN}/specialist-3.jpg` },
 ];
 
 const SERVICES = [

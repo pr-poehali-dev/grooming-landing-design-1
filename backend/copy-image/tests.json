@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "method": "GET",
+      "path": "/?url=https://httpbin.org/image/jpeg",
+      "expectedStatus": 200
+    }
+  ]
+}
