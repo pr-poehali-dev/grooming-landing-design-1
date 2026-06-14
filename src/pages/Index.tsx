@@ -41,7 +41,7 @@ const FAQ = [
   { q: "Используете ли вы безопасную косметику?", a: "Только сертифицированная профессиональная косметика ведущих брендов. Гипоаллергенные серии для чувствительной кожи." },
 ];
 
-const TICKER_ITEMS = ["🐾 ГРУМИНГ", "✂️ СТРИЖКА", "🛁 КУПАНИЕ", "💅 ПЕДИКЮР", "🐕 СОБАКИ", "🐈 КОШКИ", "⭐ 5 ЗВЁЗД", "📍 ВОЛГОГРАД"];
+
 
 export default function Index() {
   const [booking, setBooking] = useState({ name: "", phone: "", pet: "", service: "", specialist: "", date: "", time: "" });
@@ -62,10 +62,10 @@ export default function Index() {
           <div className="flex items-center gap-3">
             <img src={FACADE_IMG} alt="Dog & Cat" className="w-9 h-9 rounded-xl object-cover object-top" style={{ border: "1px solid rgba(255,122,0,0.4)" }} />
             <div>
-              <div style={{ fontFamily: "Oswald", fontSize: "1.1rem", fontWeight: 700, letterSpacing: "0.08em", lineHeight: 1 }}>
-                DOG &amp; <span style={{ color: "var(--orange)" }}>CAT</span>
+              <div style={{ fontFamily: "Oswald", fontSize: "1.3rem", fontWeight: 700, letterSpacing: "0.08em", lineHeight: 1 }}>
+                MAKET<span style={{ color: "var(--orange)" }}>GRUM</span>
               </div>
-              <div style={{ fontFamily: "Rubik", fontSize: "0.6rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.15em", textTransform: "uppercase" }}>Рыжуля · Волгоград</div>
+              <div style={{ fontFamily: "Rubik", fontSize: "0.6rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.15em", textTransform: "uppercase" }}>Груминг · Волгоград</div>
             </div>
           </div>
 
@@ -176,15 +176,6 @@ export default function Index() {
           <Icon name="ChevronDown" size={15} style={{ color: "var(--orange)" }} />
         </div>
       </section>
-
-      {/* ===== TICKER ===== */}
-      <div className="ticker-wrap py-3">
-        <div className="animate-ticker inline-flex gap-12" style={{ width: "max-content" }}>
-          {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i} style={{ fontFamily: "Oswald", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.15em", color: "rgba(255,122,0,0.75)" }}>{item}</span>
-          ))}
-        </div>
-      </div>
 
       {/* ===== SERVICES ===== */}
       <section id="услуги" className="relative py-28 overflow-hidden">
@@ -336,94 +327,63 @@ export default function Index() {
       </section>
 
       {/* ===== BOOKING ===== */}
-      <section id="запись" className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute animate-orb-pulse" style={{ top: "50%", left: "5%", width: 500, height: 500, background: "radial-gradient(circle, rgba(255,122,0,0.1) 0%, transparent 70%)", borderRadius: "50%", transform: "translateY(-50%)" }} />
-          <div className="absolute animate-orb-pulse stagger-4" style={{ top: "50%", right: "3%", width: 380, height: 380, background: "radial-gradient(circle, rgba(255,122,0,0.08) 0%, transparent 70%)", borderRadius: "50%", transform: "translateY(-50%)" }} />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-4 orange-border">
-              <Icon name="Calendar" size={13} style={{ color: "var(--orange)" }} />
-              <span style={{ color: "var(--orange)", fontFamily: "Oswald", fontSize: "0.72rem", letterSpacing: "0.18em" }}>ОНЛАЙН-ЗАПИСЬ</span>
-            </div>
-            <h2 className="section-title mb-3">ЗАПИШИТЕСЬ <span className="orange-text">СЕЙЧАС</span></h2>
-            <p className="section-subtitle">Заполните форму — мы свяжемся для подтверждения</p>
+      <section id="запись" className="relative py-24 overflow-hidden">
+        <div className="max-w-xl mx-auto px-6 relative z-10">
+          <div className="mb-10">
+            <h2 className="section-title mb-2">ЗАПИСЬ <span className="orange-text">ОНЛАЙН</span></h2>
+            <p className="section-subtitle">Оставьте заявку — мы перезвоним и подберём удобное время</p>
           </div>
 
-          <div className="glass-orange rounded-3xl p-8 md:p-10">
-            {bookingSubmitted ? (
-              <div className="text-center py-10">
-                <div className="text-6xl mb-6 animate-paw">🐾</div>
-                <h3 style={{ fontFamily: "Oswald", fontSize: "2rem", marginBottom: 12, color: "var(--white)" }}>ЗАЯВКА <span className="orange-text">ОТПРАВЛЕНА!</span></h3>
-                <p style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.55)" }}>Мы свяжемся с вами в ближайшее время</p>
-                <button onClick={() => setBookingSubmitted(false)} className="mt-8 orange-glow-btn px-6 py-3 rounded-xl" style={{ fontFamily: "Oswald", letterSpacing: "0.06em" }}>
-                  НОВАЯ ЗАПИСЬ
+          {bookingSubmitted ? (
+            <div className="py-16 text-center">
+              <div className="text-5xl mb-5">🐾</div>
+              <h3 style={{ fontFamily: "Oswald", fontSize: "1.8rem", color: "var(--white)", marginBottom: 8 }}>ЗАЯВКА <span className="orange-text">ПРИНЯТА</span></h3>
+              <p style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.45)", fontSize: "0.9rem" }}>Свяжемся с вами в течение часа</p>
+              <button onClick={() => setBookingSubmitted(false)} className="mt-8 orange-glow-btn px-6 py-3 rounded-xl text-sm" style={{ fontFamily: "Oswald", letterSpacing: "0.06em" }}>
+                НОВАЯ ЗАПИСЬ
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleBooking} className="space-y-4">
+              {[
+                { key: "name", placeholder: "Ваше имя", type: "text" },
+                { key: "phone", placeholder: "Телефон", type: "tel" },
+                { key: "pet", placeholder: "Имя питомца", type: "text" },
+              ].map(field => (
+                <input
+                  key={field.key}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  required
+                  value={booking[field.key as keyof typeof booking]}
+                  onChange={e => setBooking(prev => ({ ...prev, [field.key]: e.target.value }))}
+                  style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.12)", borderRadius: 0, padding: "14px 0", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "1rem" }}
+                />
+              ))}
+
+              <select value={booking.service} onChange={e => setBooking(prev => ({ ...prev, service: e.target.value }))}
+                style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.12)", borderRadius: 0, padding: "14px 0", color: booking.service ? "var(--white)" : "rgba(255,255,255,0.35)", outline: "none", fontFamily: "Rubik", fontSize: "1rem" }}>
+                <option value="" style={{ background: "#1A1A1A" }}>Услуга</option>
+                {SERVICES.map(s => <option key={s.title} value={s.title} style={{ background: "#1A1A1A" }}>{s.title} — {s.price}</option>)}
+              </select>
+
+              <div className="grid grid-cols-2 gap-4">
+                <select value={booking.specialist} onChange={e => setBooking(prev => ({ ...prev, specialist: e.target.value }))}
+                  style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.12)", borderRadius: 0, padding: "14px 0", color: booking.specialist ? "var(--white)" : "rgba(255,255,255,0.35)", outline: "none", fontFamily: "Rubik", fontSize: "1rem" }}>
+                  <option value="" style={{ background: "#1A1A1A" }}>Мастер</option>
+                  {SPECIALISTS.map(s => <option key={s.name} value={s.name} style={{ background: "#1A1A1A" }}>{s.name}</option>)}
+                </select>
+                <input type="date" value={booking.date} onChange={e => setBooking(prev => ({ ...prev, date: e.target.value }))}
+                  style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,0.12)", borderRadius: 0, padding: "14px 0", color: booking.date ? "var(--white)" : "rgba(255,255,255,0.35)", outline: "none", fontFamily: "Rubik", fontSize: "1rem", colorScheme: "dark" }} />
+              </div>
+
+              <div style={{ paddingTop: 12 }}>
+                <button type="submit" className="w-full orange-glow-btn py-4 rounded-xl text-base flex items-center justify-center gap-2 mt-2" style={{ fontFamily: "Oswald", letterSpacing: "0.1em" }}>
+                  ОТПРАВИТЬ ЗАЯВКУ
                 </button>
               </div>
-            ) : (
-              <form onSubmit={handleBooking} className="grid md:grid-cols-2 gap-5">
-                {[
-                  { key: "name", label: "Ваше имя", placeholder: "Иван Иванов", type: "text" },
-                  { key: "phone", label: "Телефон", placeholder: "+7 (900) 000-00-00", type: "tel" },
-                  { key: "pet", label: "Имя питомца", placeholder: "Бублик", type: "text" },
-                ].map(field => (
-                  <div key={field.key}>
-                    <label style={{ fontFamily: "Oswald", fontSize: "0.7rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", display: "block", marginBottom: 6 }}>{field.label.toUpperCase()}</label>
-                    <input
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      required
-                      value={booking[field.key as keyof typeof booking]}
-                      onChange={e => setBooking(prev => ({ ...prev, [field.key]: e.target.value }))}
-                      style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,122,0,0.2)", borderRadius: 12, padding: "12px 16px", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "0.9rem" }}
-                    />
-                  </div>
-                ))}
-
-                <div>
-                  <label style={{ fontFamily: "Oswald", fontSize: "0.7rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", display: "block", marginBottom: 6 }}>УСЛУГА</label>
-                  <select value={booking.service} onChange={e => setBooking(prev => ({ ...prev, service: e.target.value }))}
-                    style={{ width: "100%", background: "#1A1A1A", border: "1px solid rgba(255,122,0,0.2)", borderRadius: 12, padding: "12px 16px", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "0.9rem" }}>
-                    <option value="">Выберите услугу</option>
-                    {SERVICES.map(s => <option key={s.title} value={s.title}>{s.title} — {s.price}</option>)}
-                  </select>
-                </div>
-
-                <div>
-                  <label style={{ fontFamily: "Oswald", fontSize: "0.7rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", display: "block", marginBottom: 6 }}>МАСТЕР</label>
-                  <select value={booking.specialist} onChange={e => setBooking(prev => ({ ...prev, specialist: e.target.value }))}
-                    style={{ width: "100%", background: "#1A1A1A", border: "1px solid rgba(255,122,0,0.2)", borderRadius: 12, padding: "12px 16px", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "0.9rem" }}>
-                    <option value="">Любой мастер</option>
-                    {SPECIALISTS.map(s => <option key={s.name} value={s.name}>{s.name} ({s.spec})</option>)}
-                  </select>
-                </div>
-
-                <div>
-                  <label style={{ fontFamily: "Oswald", fontSize: "0.7rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", display: "block", marginBottom: 6 }}>ДАТА</label>
-                  <input type="date" value={booking.date} onChange={e => setBooking(prev => ({ ...prev, date: e.target.value }))}
-                    style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,122,0,0.2)", borderRadius: 12, padding: "12px 16px", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "0.9rem", colorScheme: "dark" }} />
-                </div>
-
-                <div>
-                  <label style={{ fontFamily: "Oswald", fontSize: "0.7rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", display: "block", marginBottom: 6 }}>ВРЕМЯ</label>
-                  <select value={booking.time} onChange={e => setBooking(prev => ({ ...prev, time: e.target.value }))}
-                    style={{ width: "100%", background: "#1A1A1A", border: "1px solid rgba(255,122,0,0.2)", borderRadius: 12, padding: "12px 16px", color: "var(--white)", outline: "none", fontFamily: "Rubik", fontSize: "0.9rem" }}>
-                    <option value="">Выберите время</option>
-                    {["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00"].map(t => <option key={t}>{t}</option>)}
-                  </select>
-                </div>
-
-                <div className="md:col-span-2 mt-2">
-                  <button type="submit" className="w-full orange-glow-btn py-4 rounded-2xl text-lg flex items-center justify-center gap-3" style={{ fontFamily: "Oswald", letterSpacing: "0.08em" }}>
-                    <Icon name="Calendar" size={20} />
-                    ОТПРАВИТЬ ЗАЯВКУ
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
+            </form>
+          )}
         </div>
       </section>
 
