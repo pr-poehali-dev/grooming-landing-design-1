@@ -2,7 +2,7 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const FACADE_IMG = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket/09935c9d-4b64-4aab-9703-f303a92fc178.png";
-const GROOMING_ACTION = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket/grooming-hero.jpg";
+const GROOMING_ACTION = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket/grooming-hero-v2.jpg";
 
 const CDN = "https://cdn.poehali.dev/projects/75fd0bbd-2c32-47da-a5fe-4778bf7b119c/bucket";
 
