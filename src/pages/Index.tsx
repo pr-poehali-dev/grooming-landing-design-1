@@ -82,7 +82,7 @@ export default function Index() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ paddingTop: "80px" }}>
+      <section className="relative flex items-center overflow-hidden" style={{ paddingTop: "80px", minHeight: "100svh" }}>
         {/* Blur background */}
         <div className="hero-bg-blur" style={{ backgroundImage: `url(${GROOMING_ACTION})` }} />
 
@@ -95,7 +95,7 @@ export default function Index() {
           <div className="absolute animate-orb-pulse stagger-3" style={{ bottom: "15%", left: "5%", width: 280, height: 280, background: "radial-gradient(circle, rgba(255,149,0,0.12) 0%, transparent 70%)", borderRadius: "50%" }} />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-20 w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-12 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
           {/* Text */}
           <div className="animate-slide-up">
             <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 orange-border">
@@ -103,7 +103,7 @@ export default function Index() {
               <span style={{ color: "var(--orange)", fontFamily: "Oswald", fontSize: "0.75rem", letterSpacing: "0.18em" }}>ГРУМИНГ-САЛОН · ВОЛГОГРАД</span>
             </div>
 
-            <h1 style={{ fontFamily: "Oswald", fontSize: "clamp(3.2rem,8vw,6rem)", fontWeight: 700, textTransform: "uppercase", lineHeight: 1, marginBottom: 24 }}>
+            <h1 style={{ fontFamily: "Oswald", fontSize: "clamp(2.8rem,6vw,5rem)", fontWeight: 700, textTransform: "uppercase", lineHeight: 1, marginBottom: 20 }}>
               ГРУМИНГ<br />
               <span className="orange-text">ДЛЯ ТВОИХ</span><br />
               ЛЮБИМЦЕВ
@@ -115,7 +115,7 @@ export default function Index() {
 
             <div className="flex items-center gap-2 mb-10">
               <Icon name="MapPin" size={15} style={{ color: "var(--orange)" }} />
-              <span style={{ fontFamily: "Rubik", fontSize: "0.9rem", color: "rgba(255,255,255,0.55)" }}>ул. Николая Отрады, 22б, Волгоград</span>
+              <span style={{ fontFamily: "Rubik", fontSize: "0.9rem", color: "rgba(255,255,255,0.55)" }}>ул. Мира, 14, Волгоград</span>
             </div>
 
             <div className="flex flex-wrap gap-4 mb-12">
@@ -158,7 +158,7 @@ export default function Index() {
                     <div className="flex items-center justify-between">
                       <div>
                         <div style={{ fontFamily: "Oswald", fontSize: "1rem", fontWeight: 600 }}>MAKETGRUM</div>
-                        <div style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.5)", fontSize: "0.78rem" }}>📍 ул. Николая Отрады, 22б</div>
+                        <div style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.5)", fontSize: "0.78rem" }}>📍 ул. Мира, 14</div>
                       </div>
                       <div className="flex gap-0.5">
                         {[1,2,3,4,5].map(s => <span key={s} style={{ color: "var(--orange)", fontSize: "0.85rem" }}>★</span>)}
@@ -309,14 +309,14 @@ export default function Index() {
             <h2 className="section-title mb-4">ЧТО ГОВОРЯТ <span className="orange-text">О НАС</span></h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="service-card rounded-2xl p-6" style={{ background: "var(--dark-card)", border: "1px solid var(--dark-border)" }}>
+              <div key={i} className="service-card rounded-2xl p-6 flex flex-col" style={{ background: "var(--dark-card)", border: "1px solid var(--dark-border)" }}>
                 <div className="flex gap-1 mb-4">
                   {[1,2,3,4,5].map(s => <span key={s} style={{ color: "var(--orange)", fontSize: "0.85rem" }}>★</span>)}
                 </div>
-                <p style={{ fontFamily: "Rubik", color: "rgba(245,245,245,0.65)", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: 16, fontStyle: "italic" }}>"{r.text}"</p>
-                <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 12 }}>
+                <p style={{ fontFamily: "Rubik", color: "rgba(245,245,245,0.65)", fontSize: "0.875rem", lineHeight: 1.7, fontStyle: "italic", flex: 1 }}>"{r.text}"</p>
+                <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 12, marginTop: 16 }}>
                   <div style={{ fontFamily: "Oswald", fontWeight: 600, fontSize: "0.95rem", color: "var(--white)" }}>{r.name}</div>
                   <div style={{ fontFamily: "Rubik", color: "var(--orange)", fontSize: "0.72rem" }}>{r.pet}</div>
                 </div>
@@ -435,7 +435,7 @@ export default function Index() {
           {/* Contact cards */}
           <div className="grid md:grid-cols-3 gap-5 mb-10">
             {[
-              { icon: "MapPin", title: "Адрес", val: "ул. Николая Отрады, 22б", sub: "Волгоград" },
+              { icon: "MapPin", title: "Адрес", val: "ул. Мира, 14", sub: "Волгоград" },
               { icon: "Phone", title: "Телефон", val: "+7 (900) 000-00-00", sub: "Пн–Вс: 10:00–20:00" },
               { icon: "Instagram", title: "Соцсети", val: "@maketgrum", sub: "Наши работы каждый день" },
             ].map(c => (
@@ -455,7 +455,7 @@ export default function Index() {
           {/* Map iframe */}
           <div className="rounded-3xl overflow-hidden" style={{ border: "1px solid rgba(255,122,0,0.25)", boxShadow: "0 0 40px rgba(255,122,0,0.1)", height: 420 }}>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=44.516939%2C48.707103&z=16&pt=44.516939,48.707103,pm2orgm&text=%D1%83%D0%BB.%20%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%8F%20%D0%9E%D1%82%D1%80%D0%B0%D0%B4%D1%8B%2C%2022%D0%B1%2C%20%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B3%D1%80%D0%B0%D0%B4"
+              src="https://yandex.ru/map-widget/v1/?ll=44.5133%2C48.5244&z=16&pt=44.5133,48.5244,pm2orgm&text=%D1%83%D0%BB.%20%D0%9C%D0%B8%D1%80%D0%B0%2C%2014%2C%20%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B3%D1%80%D0%B0%D0%B4"
               width="100%"
               height="100%"
               style={{ border: "none", filter: "invert(0.9) hue-rotate(180deg) saturate(0.5) brightness(0.85)" }}
