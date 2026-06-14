@@ -110,7 +110,7 @@ export default function Index() {
             </h1>
 
             <p className="section-subtitle mb-4" style={{ fontSize: "1.1rem", maxWidth: 460 }}>
-              Dog &amp; Cat «Рыжуля» — профессиональная стрижка и уход за животными в самом сердце Волгограда. Мы любим каждого питомца как своего.
+              Maketgrum — профессиональная стрижка и уход за животными в самом сердце Волгограда. Мы любим каждого питомца как своего.
             </p>
 
             <div className="flex items-center gap-2 mb-10">
@@ -129,11 +129,11 @@ export default function Index() {
               </a>
             </div>
 
-            <div className="flex gap-10">
-              {[["500+", "клиентов"], ["5★", "рейтинг"], ["3", "мастера"]].map(([num, label]) => (
-                <div key={label}>
+            <div className="flex items-end gap-0" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24 }}>
+              {[["500+", "клиентов"], ["5★", "рейтинг"], ["3", "мастера"]].map(([num, label], i) => (
+                <div key={label} className="flex-1" style={{ paddingRight: 24, borderRight: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none", paddingLeft: i > 0 ? 24 : 0 }}>
                   <div style={{ fontFamily: "Oswald", fontSize: "2.2rem", fontWeight: 700, color: "var(--orange)", lineHeight: 1 }}>{num}</div>
-                  <div style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.45)", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.12em", marginTop: 4 }}>{label}</div>
+                  <div style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.4)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4 }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -157,7 +157,7 @@ export default function Index() {
                   <div className="glass rounded-2xl p-4 orange-border">
                     <div className="flex items-center justify-between">
                       <div>
-                        <div style={{ fontFamily: "Oswald", fontSize: "1rem", fontWeight: 600 }}>Dog &amp; Cat «Рыжуля»</div>
+                        <div style={{ fontFamily: "Oswald", fontSize: "1rem", fontWeight: 600 }}>MAKETGRUM</div>
                         <div style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.5)", fontSize: "0.78rem" }}>📍 ул. Николая Отрады, 22б</div>
                       </div>
                       <div className="flex gap-0.5">
@@ -437,7 +437,7 @@ export default function Index() {
             {[
               { icon: "MapPin", title: "Адрес", val: "ул. Николая Отрады, 22б", sub: "Волгоград" },
               { icon: "Phone", title: "Телефон", val: "+7 (900) 000-00-00", sub: "Пн–Вс: 10:00–20:00" },
-              { icon: "Instagram", title: "Соцсети", val: "@dogcat_ryzhulya", sub: "Наши работы каждый день" },
+              { icon: "Instagram", title: "Соцсети", val: "@maketgrum", sub: "Наши работы каждый день" },
             ].map(c => (
               <div key={c.title} className="service-card glass-orange rounded-2xl p-6 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255,122,0,0.15)", border: "1px solid rgba(255,122,0,0.3)" }}>
@@ -470,13 +470,12 @@ export default function Index() {
       <footer className="py-10" style={{ borderTop: "1px solid rgba(255,122,0,0.12)" }}>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src={FACADE_IMG} alt="Dog & Cat" className="w-8 h-8 rounded-xl object-cover object-top" style={{ border: "1px solid rgba(255,122,0,0.35)" }} />
             <span style={{ fontFamily: "Oswald", fontSize: "1rem", fontWeight: 700, letterSpacing: "0.08em", color: "var(--white)" }}>
-              DOG &amp; <span style={{ color: "var(--orange)" }}>CAT</span> <span style={{ color: "rgba(255,255,255,0.35)", fontWeight: 400 }}>«Рыжуля»</span>
+              MAKET<span style={{ color: "var(--orange)" }}>GRUM</span>
             </span>
           </div>
           <p style={{ fontFamily: "Rubik", color: "rgba(255,255,255,0.25)", fontSize: "0.78rem" }}>
-            © 2024 Dog &amp; Cat «Рыжуля» — Груминг-салон в Волгограде
+            © 2024 Maketgrum — Груминг-салон в Волгограде
           </p>
           <div className="flex gap-5">
             {[["Услуги","#услуги"],["Запись","#запись"],["Контакты","#контакты"]].map(([l,h]) => (
